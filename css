@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    font-family: sans-serif;
+    color: white;
+}
+
+.main{
+
+    height: 785px;
+   background: url("../img/img.jpg") center;
+   display: flex;
+   align-items:center;
+   justify-content: center;
+   position: relative;
+   text-align: center;
+}
+.main span{
+    font-size: 20px;
+    margin-top 30px;
+    margin-bottom: 10px;
+}
+.form-octa {
+    display: grid;
+    grid-template-columns: 500px 250px;
+    margin-top 30px;
+    margin-bottom: 10px;
+}
+.logo {
+    position:absolute;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    top: 10px;
+    left: 0;
+    margin: 5px 5px;
+     
+     
+}
+.logo a {
+    padding: 10px 10px;
+    text-decoration: none;
+    background: #e50914;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 5px;
+}
+
+.form-octa input {
+    padding: 20px 10px;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+.main p{
+    font-size: 14px;
+    
+}
+.button{
+    background: #e50914;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+
+}
+.main-child{
+    z-index: 10;
+    display: grid;
+    justify-items: center;
+}
+.main h1 {
+    font-size: 57px;
+    max-width: 480px;
+    text-align: center;
+}
+
+
+.gradient{
+    background: rgb(0,0,0,0.4);
+    background-image: linear-gradient(to top, rgba(0,0,0.8)0,rbga(0,0,0,0) 60%,
+    rgb(0,0,0.8) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+} 
