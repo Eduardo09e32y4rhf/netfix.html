@@ -1,95 +1,215 @@
-*{
+* {
     margin: 0;
     padding: 0;
-
+    box-sizing: border-box;
 }
-body{
-    font-family: sans-serif;
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: white;
+    background-color: black;
+    overflow-x: hidden;
 }
 
-.main{
-
-    height: 785px;
-   background: url("../img/img.jpg") center;
-   display: flex;
-   align-items:center;
-   justify-content: center;
-   position: relative;
-   text-align: center;
-}
-.main span{
-    font-size: 20px;
-    margin-top 30px;
-    margin-bottom: 10px;
-}
-.form-octa {
-    display: grid;
-    grid-template-columns: 500px 250px;
-    margin-top 30px;
-    margin-bottom: 10px;
-}
-.logo {
-    position:absolute;
-    z-index: 100;
+/* Container for the hero section */
+.hero-container {
     width: 100%;
+    min-height: 100vh;
+    background: url("../img/img.jpg") no-repeat center center/cover;
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    top: 10px;
-    left: 0;
-    margin: 5px 5px;
-     
-     
-}
-.logo a {
-    padding: 10px 10px;
-    text-decoration: none;
-    background: #e50914;
-    outline: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    text-transform: uppercase;
-    margin: 5px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 1;
 }
 
-.form-octa input {
-    padding: 20px 10px;
-    font-size: 14px;
-    font-family: sans-serif;
-}
-.main p{
-    font-size: 14px;
-    
-}
-.button{
-    background: #e50914;
-    outline: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    text-transform: uppercase;
-
-}
-.main-child{
-    z-index: 10;
-    display: grid;
-    justify-items: center;
-}
-.main h1 {
-    font-size: 57px;
-    max-width: 480px;
-    text-align: center;
-}
-
-
-.gradient{
-    background: rgb(0,0,0,0.4);
-    background-image: linear-gradient(to top, rgba(0,0,0.8)0,rbga(0,0,0,0) 60%,
-    rgb(0,0,0.8) 100%);
+/* Gradient Overlay */
+.hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-} 
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0,
+        rgba(0, 0, 0, 0) 60%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    z-index: -1;
+}
+
+/* Header */
+.header {
+    width: 100%;
+    padding: 20px 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.logo img {
+    height: 45px; /* Adjust based on actual SVG size */
+    width: auto;
+}
+
+.btn-signin {
+    background-color: #e50914;
+    color: white;
+    text-decoration: none;
+    padding: 7px 17px;
+    border-radius: 3px;
+    font-weight: 400;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+}
+
+.btn-signin:hover {
+    background-color: #f40612;
+}
+
+/* Main Content */
+.hero-content {
+    text-align: center;
+    padding: 75px 0;
+    max-width: 950px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    z-index: 10;
+}
+
+.hero-content h1 {
+    font-size: 3.125rem; /* ~50px */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    max-width: 640px;
+}
+
+.subtitle {
+    font-size: 1.625rem; /* ~26px */
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.cta-text {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    padding-bottom: 20px;
+}
+
+/* Form */
+.email-form {
+    display: flex;
+    flex-direction: row; /* Side by side on desktop */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+}
+
+.input-container {
+    position: relative;
+    flex-grow: 1;
+    height: 60px; /* Consistent height */
+    min-width: 450px;
+}
+
+.email-form input {
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px 0; /* Space for label */
+    font-size: 1rem;
+    border: none;
+    border-radius: 2px 0 0 2px; /* Rounded left only */
+    outline: none;
+}
+
+/* Floating Label Logic (Simplified for now) */
+.email-form label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #8c8c8c;
+    pointer-events: none;
+    transition: 0.1s ease;
+    display: none; /* Hiding floating label for simplicity unless JS is added, using placeholder */
+}
+
+/* Button */
+.btn-primary {
+    height: 60px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 0 1em;
+    font-size: 1.625rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 0 2px 2px 0; /* Rounded right only */
+    white-space: nowrap;
+    border-left: 1px solid #333;
+}
+
+.btn-primary:hover {
+    background-color: #f40612;
+}
+
+/* Responsiveness */
+@media (max-width: 950px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .subtitle {
+        font-size: 1.25rem;
+    }
+    .email-form {
+        flex-direction: column;
+        align-items: center;
+    }
+    .input-container {
+        min-width: 100%;
+        margin-bottom: 10px;
+        border-radius: 2px;
+    }
+    .email-form input {
+        border-radius: 2px;
+    }
+    .btn-primary {
+        width: auto;
+        border-radius: 2px;
+        font-size: 1rem;
+        padding: 0 1.5em;
+        height: 48px; /* Smaller button on mobile */
+    }
+}
+
+@media (max-width: 550px) {
+    .hero-content {
+        padding: 50px 20px;
+    }
+    .hero-content h1 {
+        font-size: 1.75rem;
+    }
+    .logo img {
+        height: 25px;
+    }
+    .btn-signin {
+        padding: 4px 8px;
+        font-size: 0.9rem;
+    }
+    .input-container {
+        height: 48px;
+    }
+}
